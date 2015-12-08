@@ -107,7 +107,7 @@ class ParseBase(object):
         if http_verb == 'GET' and data:
             url += '?%s' % urlencode(kw)
             data = None
-        else:
+        elif "File" not in url:
             data = data.encode('utf-8')
 
         headers = {
